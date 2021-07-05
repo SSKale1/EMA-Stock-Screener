@@ -2,6 +2,7 @@ from yahoo_fin.stock_info import *
 import pandas
 import tkinter as tk
 from datetime import date,datetime
+import matplotlib.pyplot as plt
 #ticker_list=tickers_nifty50()
 #print(ticker_list)
 # print(type(ticker))
@@ -9,7 +10,7 @@ from datetime import date,datetime
 today=date.today()
 ed_date=today.strftime("%m/%d/%Y")
 st_date=ed_date[:-1]+'0'
-ticker_list=['BAJAJ-AUTO.NS', 'BAJAJFINSV.NS', 'BAJFINANCE.NS', 'BHARTIARTL.NS', 'BRITANNIA.NS', 'CIPLA.NS', 'COALINDIA.NS', 'GRASIM.NS', 'HDFCLIFE.NS', 'HEROMOTOCO.NS', 'HINDALCO.NS', 'ICICIBANK.NS', 'INDUSINDBK.NS', 'ITC.NS', 'KOTAKBANK.NS', 'LT.NS', 'MARUTI.NS', 'M&M.NS', 'NESTLEIND.NS', 'NTPC.NS', 'ONGC.NS', 'RELIANCE.NS', 'SHREECEM.NS', 'TATACONSUM.NS', 'TATASTEEL.NS', 'TCS.NS', 'TECHM.NS', 'TITAN.NS', 'ULTRACEMCO.NS', 'WIPRO.NS']
+ticker_list=['BAJAJ-AUTO.NS', 'BAJAJFINSV.NS', 'BAJFINANCE.NS', 'BHARTIARTL.NS', 'BRITANNIA.NS']#, 'CIPLA.NS', 'COALINDIA.NS', 'GRASIM.NS', 'HDFCLIFE.NS', 'HEROMOTOCO.NS', 'HINDALCO.NS', 'ICICIBANK.NS', 'INDUSINDBK.NS', 'ITC.NS', 'KOTAKBANK.NS', 'LT.NS', 'MARUTI.NS', 'M&M.NS', 'NESTLEIND.NS', 'NTPC.NS', 'ONGC.NS', 'RELIANCE.NS', 'SHREECEM.NS', 'TATACONSUM.NS', 'TATASTEEL.NS', 'TCS.NS', 'TECHM.NS', 'TITAN.NS', 'ULTRACEMCO.NS', 'WIPRO.NS']
 #ticker_list=['IRCTC.NS', 'BAJAJFINSV.NS', 'BAJFINANCE.NS', 'BHARTIARTL.NS', 'BRITANNIA.NS', 'CIPLA.NS', 'COALINDIA.NS', 'GRASIM.NS', 'HDFCLIFE.NS', 'HEROMOTOCO.NS', 'HINDALCO.NS', 'ICICIBANK.NS', 'INDUSINDBK.NS', 'ITC.NS', 'KOTAKBANK.NS', 'LT.NS', 'MARUTI.NS', 'M&M.NS', 'NESTLEIND.NS', 'NTPC.NS', 'ONGC.NS', 'RELIANCE.NS', 'SHREECEM.NS', 'TATACONSUM.NS', 'TATASTEEL.NS', 'TCS.NS', 'TECHM.NS', 'TITAN.NS', 'ULTRACEMCO.NS', 'WIPRO.NS']
 
 now=datetime.now()
@@ -64,6 +65,7 @@ def main():
                     self.e.configure({"background": "green"})
                     self.e.configure(state='readonly')
 
+
     total_rows=len(ticker_list)+1
     total_columns=7
     lst=[('Name', 'ema5', 'ema13', 'ema26', 'Current Flag', 'Last Up Intersection', 'Pending status')]
@@ -88,6 +90,7 @@ def main():
                 lst_status='Flags close'
 
         lst.append((lst_name,lst_ema5,lst_ema13,lst_ema26,lst_cur, lst_intersec, lst_status))
+
 
     t=Table(data_frame)
     data_frame.pack()
