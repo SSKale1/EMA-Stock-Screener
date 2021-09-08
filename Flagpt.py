@@ -3,8 +3,8 @@ import tkinter as tk
 from datetime import date,datetime
 import matplotlib.pyplot as plt
 ticker_list=tickers_nifty50()
-#print(ticker_list)
-#print(type(ticker))
+print(ticker_list)
+print(type(ticker))
 print(len(ticker))
 today=date.today()
 ed_date=today.strftime("%m/%d/%Y")
