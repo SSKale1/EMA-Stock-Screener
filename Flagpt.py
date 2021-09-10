@@ -2,10 +2,10 @@ from yahoo_fin.stock_info import *
 import tkinter as tk
 from datetime import date,datetime
 import matplotlib.pyplot as plt
-ticker_list=tickers_nifty50()
+"""ticker_list=tickers_nifty50()
 print(ticker_list)
 print(type(ticker))
-print(len(ticker))
+print(len(ticker))"""
 today=date.today()
 ed_date=today.strftime("%m/%d/%Y")
 st_date=ed_date[:-1]+'0'
