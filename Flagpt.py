@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 print(ticker_list)
 print(type(ticker))
 print(len(ticker))"""
+
 today=date.today()
 ed_date=today.strftime("%m/%d/%Y")
 st_date=ed_date[:-1]+'0'
